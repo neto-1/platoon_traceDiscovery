@@ -1,4 +1,4 @@
 make platoon with trace discovery avaible on github.
 
 Note: The normal platoon is already available on git, now we want the want with algorithms/trace_discovery to be avaible on git
-Nelson (this is available on my bureau as "src") either make a new branch or a new repo for that.
+Nelson (this is available on my bureau as "src") idealy make a new repo for that.
