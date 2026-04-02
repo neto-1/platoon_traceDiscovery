@@ -32,30 +32,33 @@ Please consider the directory `/exp2` to be the execution root for all operation
    Using HTTPS:
 
    ```bash
-   git clone https://gitlab.tu-clausthal.de/maha19/platooning.git
-   cd platooning
+   git clone https://github.com/neto-1/platoon_traceDiscovery.git
+   cd platoon_traceDiscovery
    ```
 
    Or using SSH:
 
    ```bash
-   git clone git@gitlab.tu-clausthal.de:maha19/platooning.git
-   cd platooning
+   git clone https://github.com/neto-1/platoon_traceDiscovery.git
+   cd platoon_traceDiscovery
    ```
+
+   - Inside this folder,  create a new folder called ``data`` and add then ``database.spatial`` database here.
+   ```
+   mkdir data
+   ```
+   **NOTE** Please get access to the ``database.spatial`` database by simply sending an email to any platoon team member. For storage reasons, this could be push to the github repo.
+
 2. **Install Docker and Neo4j Docker Image (3.5.2-enterprise):**
 
     - Install Docker based on your OS from: https://docs.docker.com/engine/install/
-    - Pull the following Neo4j Docker image:
-   ```bash
-   docker pull neo4j:3.5.2-enterprise
-   ```
-    - **Important**: Use the specified Neo4j version (3.5.2-enterprise). Newer versions **are not compatible** with this
-      project due to syntax changes, especially with regards to APOC procedures.
+
 
 3. **Install Python Dependencies:**
 
    Ensure you have Python 3.x installed. Optional: use a virtual environment.
 
+   - Install packages from requirements.txt if this is present or else, install them manually after runing "python run.py"
    ```bash
    pip install -r /exp2/requirements.txt
    ```
@@ -63,21 +66,7 @@ Please consider the directory `/exp2` to be the execution root for all operation
 
 4. **Configure Neo4j Credentials & Database paths:**
 
-   Update `configuration.py` with the correct Neo4j credentials and paths:
-
-   ```python
-   db_user = "neo4j"
-   db_password = "12345678"
-   db_http_port = 7474
-   db_bolt_port = 7687
-   ```
-
-   Update `configuration.py` with the database, plugins, and configurations paths:
-   ```python
-    db_path = "/path/to/your/database.spatial/"
-    db_plugins_path = "/path/to/your/database.spatial/plugins"
-    db_config_path = "/path/to/your/database.spatial/conf"
-   ```
+   - The code has been optimised so that least manual configurations are required. 
 
    Specify a road network in `configuration.py` which you would like to be loaded from the database. A separate Docker
    container will be used per road network:
@@ -95,6 +84,8 @@ Please consider the directory `/exp2` to be the execution root for all operation
 
    Update `config/experiment.json` with your experiment details. The only relevant parameter for the trace discovery
    problem is `custom_nodes`:
+
+   - Runnin the experiment with custom vehicles:
    ```json
        "data_parameters": {
            "number_of_different_exp": 1,
@@ -103,8 +94,29 @@ Please consider the directory `/exp2` to be the execution root for all operation
                    "bay_10"
                ]
            }
-       }
+       },
    ```
+
+   - Runnin the experiment with random vehicles:
+   ```json
+       "data_parameters": {
+            "number_of_different_exp": 1,
+            "vehicle_sets_info": {
+               "distributions": {
+               "number_of_vehicles": [
+               7
+            ],
+            "methods": [
+               "random"
+            ],
+            "requirements": [
+               "standard"
+            ]
+            }
+         }
+      },
+   ```
+
    **Vehicle nodes** are stored in `exp2/config/vehicles/`. Each file contains a list of source and destination nodes
    for `m` vehicles in a road network `rn` and are often named `rn_n`. For example, `bay_50` lists 50 vehicles with
    starting and ending nodes that exist in the `bayern` road network (reminder: road networks should be chosen
@@ -133,8 +145,10 @@ Please consider the directory `/exp2` to be the execution root for all operation
    The main script `batch/run.py` is responsible for setting up the Neo4j database (automatically starting the Docker
    container if needed), preparing the vehicles and their routes, and running the test suite.
 
+   - At the parent directory: `platoon_traceDiscovery`, run
    ```bash
-   python3 batch/run.py
+   cd src/exp2/batch
+   python3 run.py
    ```
 
    *Note:* Ensure Docker Daemon is running.
