@@ -1,0 +1,19 @@
+{
+    "vehicles": [
+        [
+            3340,
+            60287
+        ],
+        [
+            43745,
+            106892
+        ]
+    ],
+    "description": [
+        "Garmisch Partenkirchen - Südostbayern",
+        "Nürnberg-Garching bei München"
+    ],
+    "plaoon": [
+        "not expected"
+    ]
+}

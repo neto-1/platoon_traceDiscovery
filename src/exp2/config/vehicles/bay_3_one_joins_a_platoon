@@ -1,0 +1,25 @@
+{
+    "vehicles": [
+        [
+            62150,
+            106140
+        ],
+        [
+            35397,
+            30276
+        ],
+        [
+            123492,
+            7163
+        ]
+    ],
+    "description": [
+        "South West Nuernberg - South East Nuernberg",
+        "South West Nuernberg - South East Nuernberg",
+        "Vehicle joins and leaves in the middle of the platoon"
+
+    ],
+    "plaoon": [
+        "expected"
+    ]
+}

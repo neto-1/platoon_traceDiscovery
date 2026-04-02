@@ -1,0 +1,35 @@
+{
+    "vehicles": [
+        [
+            49084,
+            47
+            
+        ],
+        [
+            186395,
+            10304
+        ],
+        [
+            44030,
+            108632
+        ],
+        [
+            5526,
+            116394
+        ],
+        [
+            98030,
+            127148
+        ]
+    ],
+    "description": [
+        "Augsburg to Munich A",
+        "Augsburg to Munich B",
+        "Augsburg to Munich C (bottom)",
+        "Augsburg to Munich D (bottom)",
+        "Augsburg to Munich D (Middle between both)"
+    ],
+    "plaoon": [
+        "expected two platoon not overlapping"
+    ]
+}

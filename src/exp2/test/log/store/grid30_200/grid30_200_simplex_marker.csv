@@ -1,0 +1,3 @@
+Objective,Time, Description, Type, Color, LabelPositionX, LabelPositionY, Side
+216360280.994489, 14263, Optimal Solution, Marker,springgreen,0, -20,center
+214647710.0, 3999, Simplex Optimizer, Marker,orangered, 116, 0,right

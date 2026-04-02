@@ -1,0 +1,27 @@
+{
+    "vehicles": [
+        [
+            55354,
+            117714
+            
+        ],
+        [
+            55354,
+            827
+        ],
+        [
+            12861,
+            29968
+        ],
+        [
+            6600,
+            29968
+        ]
+    ],
+    "description": [
+        "corresponds to Fig. 5 in Steinmezs conceptual modeling paper"
+    ],
+    "plaoon": [
+        "expected at last one big platoon"
+    ]
+}

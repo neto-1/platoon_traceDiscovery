@@ -1,0 +1,15 @@
+{
+    "prog": "main.py",
+    "description": "platooning scenarios",
+    "logging": {
+        "level": "info",
+        "format": "[%(asctime)s] - [%(levelname)s] - [%(module)s] - %(message)s",
+        "filename": "platooning.log",
+        "path": "logs",
+        "max_bytes": 1048576,
+        "backup_count": 10
+    },
+    "experiments": {
+        "path": "experiments"
+    }
+}

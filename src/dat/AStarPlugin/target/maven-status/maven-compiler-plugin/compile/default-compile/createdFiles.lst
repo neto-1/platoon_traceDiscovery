@@ -1,0 +1,8 @@
+aStar\AStarPlugin.class
+aStar\ExpanderRestriction.class
+aStar\RestrictedPathExpander.class
+aStar\AStarPlugin$2.class
+aStar\AStarPlugin$ResultPath.class
+aStar\AStarPlugin$1.class
+aStar\CoordinateType.class
+aStar\Query.class

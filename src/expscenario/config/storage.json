@@ -1,0 +1,16 @@
+{
+    "datastore": {
+        "drivername": "postgresql",
+        "database": "platooning",
+        "username": "platooning",
+        "password": "cEGS!Cx)sHX4,NcL",
+        "host": "Rycer.in.tu-clausthal.de",
+        "port": 5432
+    },
+    "migrations": {
+        "path": "migrations"
+    },
+    "repositories": {
+        "path": "repositories"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "vehicles": [
+        [
+            102586,
+            160095
+            
+        ],
+        [
+            160058,
+            90090
+        ]
+    ],
+    "description": [
+        "Hochstädt an der Donau"
+    ],
+    "plaoon": [
+        "expected"
+    ]
+}

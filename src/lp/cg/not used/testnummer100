@@ -1,0 +1,13 @@
+from gurobipy import *
+
+m = Model("rc")
+
+x1 = m.addVar(0.0, GRB.INFINITY, 3.0, GRB.CONTINUOUS, "x1")
+x2 = m.addVar(-GRB.INFINITY, 1.0, -2.0, GRB.CONTINUOUS, "x2")
+
+m.update()
+
+m.optimize()
+
+print "x1", x1.x, "rc", x1.rc
+print "x2", x2.x, "rc", x2.rc

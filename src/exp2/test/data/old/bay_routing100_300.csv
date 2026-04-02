@@ -1,0 +1,2 @@
+id,id_ts,edges,road_points,vehicle_set_size,vehicle_set_type,incentive_time,incentive_parameter,grouping,group_size,grouping_time,penalty,threshold,routing,routing_time,savings,opt_savings,spontaneous_platooning_savings,time,start_at
+925,464,7474,3739,100,bay_100,58.8155739307403, MI0.5 HI0.5,SingleGroup,1,0.247032642364502,1,0,BestPair,10800.5071547031,8.81013755045848,7.70163847813138,7.701638478131652,10800.781095981558,Jan 14 2020 11:33:01

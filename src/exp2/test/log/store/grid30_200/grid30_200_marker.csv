@@ -1,0 +1,5 @@
+Objective,Time, Description, Type, Color, LabelPositionX, LabelPositionY, Side
+216360280.994489, 14263, Optimal Solution, Marker,springgreen,0, -20,center
+217415720.23008683, 1330, No Significant Changes, Marker,blue, 0, -20,center
+217379711.09646225, 10802.546258687973, Time Limit reached after 10800 sec., Marker,blue, 0, -20,center
+214647710.0, 3999, Best Bound determined by Exact Solver, Marker,orangered, 230, 0,right

@@ -1,0 +1,450 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20191.19.0213.2333                               -->
+<workbook original-version='18.1' source-build='2019.1.0 (20191.19.0213.2333)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Neo4j' inline='true' name='federated.1q3qgrc152hygx0zu611n172dq69' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Neo4j' name='webdata-direct.1svvrvc0eozg8l1b7n2tk1b23i3t'>
+            <connection ACCESSTOKEN='' APIVersion='' CLIENTID='' CLIENTSECRET='' REDIRECT_URI='' REFRESHTOKEN='' SCOPE='' access-token-expires-in='' access-token-issue-time='' authType='basic' authentication='yes' channel='https' class='webdata-direct' connectionData='{&quot;config&quot;:{&quot;url&quot;:&quot;bolt://localhost&quot;,&quot;inspectRows&quot;:&quot;1000&quot;,&quot;tableNames&quot;:[&quot;Road&quot;,&quot;Table2&quot;,&quot;Table3&quot;,&quot;Table4&quot;,&quot;Table5&quot;],&quot;cypherQueries&quot;:[&quot;MATCH (n:RoadPoint)-[r:ROAD_SEGMENT]-&gt;(m: RoadPoint)\nWITH [n, m] AS roads, r\nUNWIND roads AS road\nRETURN road.lat AS Latitude, road.lon AS Longitude, id(r) AS Line_Group, ID(road) AS OrderOfPoints, &apos;primary&apos; AS type, &apos;segment&apos; AS category&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;]}}' connectionName='Neo4j' filename='Neo4jWdc2.html' id-token='' increment-key='' oauth-client='' path='/neo4j-tableau/website/' port='443' scriptVersion='' secondary_whitelist='' server='neo4j-contrib.github.io' urlQuery='' username='neo4j' usernameAlias='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='webdata-direct.1svvrvc0eozg8l1b7n2tk1b23i3t' name='Road' table='[Road]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Latitude</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Latitude]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>Latitude</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Longitude</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Longitude]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>Longitude</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Line_Group</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Line_Group]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>Line Group</remote-alias>
+            <ordinal>2</ordinal>
+            <caption>Line Group</caption>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OrderOfPoints</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[OrderOfPoints]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>OrderOfPoints</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>type</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[type]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>Type</remote-alias>
+            <ordinal>4</ordinal>
+            <caption>Type</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;string&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[category]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>Category</remote-alias>
+            <ordinal>5</ordinal>
+            <caption>Category</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;string&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Kennzahlnamen' datatype='string' name='[:Measure Names]' role='dimension' type='nominal' />
+      <column aggregation='Avg' datatype='integer' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column caption='Line Group' datatype='integer' name='[Line_Group]' role='measure' type='quantitative' />
+      <column aggregation='Avg' datatype='integer' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Kennzahlwerte' datatype='real' name='[Multiple Values]' role='measure' type='quantitative' />
+      <column caption='Anzahl der Datensätze' datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Order Of Points' datatype='integer' name='[OrderOfPoints]' role='measure' type='quantitative' />
+      <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+      <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+      <column-instance column='[type]' derivation='None' name='[none:type:nk]' pivot='key' type='nominal' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='de_DE' class='hyper' dbname='/Users/dmitry/Documents/Eigenes Tableau-Repository/Datenquellen/Extrakt_0k198jr1ebsit319thtu20bpkzw9.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='04/20/2019 02:33:13 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='Neo4j' increment-value='%null%' refresh-type='create' rows-inserted='720' timestamp-start='2019-04-20 14:33:13.470' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Latitude</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Latitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Latitude</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Road</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Longitude</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Longitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Longitude</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Road</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Line_Group</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Line_Group]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Line_Group</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Road</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>360</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OrderOfPoints</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OrderOfPoints]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>OrderOfPoints</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Road</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>type</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Road</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LROOT' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[category]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>category</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Road</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LROOT' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.45756' measure-ordering='alphabetic' measure-percentage='0.54244' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:type:nk]' type='palette'>
+            <map to='#000000'>
+              <bucket>&quot;motorway&quot;</bucket>
+            </map>
+            <map to='#129bff'>
+              <bucket>&quot;RoadPoint&quot;</bucket>
+            </map>
+            <map to='#3c3c3c'>
+              <bucket>&quot;primary&quot;</bucket>
+            </map>
+            <map to='#5b5b5b'>
+              <bucket>&quot;motorway_link&quot;</bucket>
+            </map>
+            <map to='#797979'>
+              <bucket>&quot;trunk&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;primary_link&quot;</bucket>
+            </map>
+            <map to='#a6a6a6'>
+              <bucket>&quot;trunk_link&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Depot&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Deutschland&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <action caption='Hervorhebung 1 (generiert)' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Blatt 1' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Category' />
+        <param name='target' value='Blatt 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Blatt 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Neo4j' name='federated.1q3qgrc152hygx0zu611n172dq69' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1q3qgrc152hygx0zu611n172dq69'>
+            <column aggregation='Avg' datatype='integer' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column caption='Line Group' datatype='integer' name='[Line_Group]' role='measure' type='quantitative' />
+            <column aggregation='Avg' datatype='integer' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column caption='Order Of Points' datatype='integer' name='[OrderOfPoints]' role='measure' type='quantitative' />
+            <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+            <column-instance column='[Latitude]' derivation='None' name='[none:Latitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Line_Group]' derivation='None' name='[none:Line_Group:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Longitude]' derivation='None' name='[none:Longitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[OrderOfPoints]' derivation='None' name='[none:OrderOfPoints:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[category]' derivation='None' name='[none:category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[type]' derivation='None' name='[none:type:nk]' pivot='key' type='nominal' />
+            <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:category:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;depot&quot;</bucket>
+              <bucket>&quot;point&quot;</bucket>
+              <bucket>&quot;segment&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <manual-sort column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:type:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Depot&quot;</bucket>
+              <bucket>&quot;motorway&quot;</bucket>
+              <bucket>&quot;primary&quot;</bucket>
+              <bucket>&quot;motorway_link&quot;</bucket>
+              <bucket>&quot;trunk&quot;</bucket>
+              <bucket>&quot;trunk_link&quot;</bucket>
+              <bucket>&quot;RoadPoint&quot;</bucket>
+              <bucket>&quot;primary_link&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1q3qgrc152hygx0zu611n172dq69].[none:Longitude:qk]' field-type='quantitative' max='693651' min='220339' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1q3qgrc152hygx0zu611n172dq69].[none:Latitude:qk]' field-type='quantitative' max='498578' min='158318' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size' field='[federated.1q3qgrc152hygx0zu611n172dq69].[none:type:nk]' field-type='nominal' max-size='1' min-size='0.346841' reverse='true' type='catsize' />
+            <encoding attr='size' field='[federated.1q3qgrc152hygx0zu611n172dq69].[none:category:nk]' field-type='nominal' max-size='1' min-size='0.141847' reverse='true' type='catsize' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='false' />
+            <format attr='enabled' id='um_lcover' value='false' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='false' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='false' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='tableau-light-gray' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:type:nk]' />
+              <size column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:category:nk]' />
+              <lod column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:Line_Group:ok]' />
+              <path column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:OrderOfPoints:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.81303572654724121' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1q3qgrc152hygx0zu611n172dq69].[none:Latitude:qk]</rows>
+        <cols>[federated.1q3qgrc152hygx0zu611n172dq69].[none:Longitude:qk]</cols>
+      </table>
+      <simple-id uuid='{499E8529-4DFD-4EC0-A85F-5CA16EBD1078}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Blatt 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='170'>
+            <card pane-specification-id='0' param='[federated.1q3qgrc152hygx0zu611n172dq69].[none:type:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1q3qgrc152hygx0zu611n172dq69].[none:category:nk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight field='[federated.1q3qgrc152hygx0zu611n172dq69].[none:category:nk]' type='size'>
+          <bucket-selection />
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+        <map-scale-visibility value='0' />
+        <default-map-tool-selection tool='16' />
+      </viewpoint>
+      <simple-id uuid='{DCD2B0E1-2F63-4A32-89DD-260C1F380FCC}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Blatt 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAEZ0lEQVR4nO3cMUsjbRiF4TNxwBgQRNBCLQVBECSFpAoWYiH+AysbGzvByn+jtoJgY2ET
+      bASxk1SSSgIplEhiIkmc+apv2V3cdp7i3Fc33Xkh92SmmaTf7+dpmgpwlKZpqunp6egdQIhS
+      9AAgEgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHA
+      GgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAWpplmSaTSfQOBCqVSiqVPO+F6cXFhdrtdvQOBNra
+      2tLu7q4cP5KcPj09qdlsRu9AoMfHR9VqNc3Pz0dPKVz6/5ehV1dXtb6+HjynWHme6+7uTsPh
+      ULVaTYuLi9GTCvXx8aFGo6HJZKLv7+/oOSHSSqUiSdrc3NTx8bGSJAmeVJzBYKCHhwcNh0Pt
+      7e2pXq9HTypUs9lUo9GInhHqj4c+t5ehv2OfmpoKWhLD6Wb3Lz6/duAHBABrBABrBABrBABr
+      BABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABr
+      BABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABr
+      BABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABr6e8X
+      4/FYpZJPE1mW/XE9Ho+DlsT4+/yO0l6vJ0m6v79Xq9UKnlOsPM/V7XYlSefn57q+vg5eVKzh
+      cBg9IVw6mUwkSZ1OR51OJ3hOnJeXl+gJCJCWy2VJ0sbGhqrVavCcYmVZpqurKw0GA+3s7Gh5
+      eTl6UqHe3991c3MTPSNUOjMzI0laW1vT4eGh1TvA5+enbm9vNRgMVK/Xtb29HT2pUM/PzwTw
+      +0WSJEqSJGpLOLezu533Jz63e+AHBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABr
+      BABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABr
+      BABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABr
+      BABrBABrBABrBABrBABrBABrBABrBABrBABrBABraZ7nkqSvry+12+3gOcUajUbKskyS1Ov1
+      9Pr6GryoWN1uN3pCuOTo6ChvNpvROxCoUqno8vJSCwsL0VMKxyMQrKVzc3OSpP39fR0cHATP
+      KdZoNNLJyYne3t50enqqarUaPalQrVZLZ2dn0TNCpUmSSJLK5bKWlpZUKvn8KfT7/V/nnZ2d
+      1crKSvCiYvEOwCMQzBEArBEArBEArBEArBEArBEArBEArBEArBEArBEArBEArBEArBEArBEA
+      rBEArBEArBEArBEArBEArBEArBEArBEArBEArBEArBEArBEArBEArBEArBEArBEArP0Hq8e9
+      HKvKWjoAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>

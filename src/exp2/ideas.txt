@@ -1,0 +1,28 @@
+we will write 2 functions; one which creates a folder called testcase{datetime} and another which creates a folder called experiment{datetime}. each returning the name/ relative path of the created folder e.g experiment{datetime}/testcase{datetime}. 
+- when we run a existing container, it creates different test cases folders for the multiple runs on each.
+- when we create or lunch a new container, it creates an experiment folder and the first testcase folder inside the experiment folder.
+- all testcase folders for the same neo4j container should be inside the same experiment folder.
+- inside the experiment folder, we will copy the content of configuration.py from the utile folder and experiment filed used inside the config to two other new files name the same way with the prefix "used". e.g the new files will be used_configuration-py and used_experiment.json
+
+we will use the names returned by these functions to create the path where to store our stats_data e.g platoon_stats, vehicle_stats etc inside add_info()
+
+i want to create these folder here:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+if container_id:
+            cls.start_or_restart_container(container_id, cls.db_container_name)
+            # we create test case folder and send the folder name or path to testcase folder to the # #add_info. 
+        else:
+            # TODO improve logging wording. 
+            logger.info(f"{orange_text}The container \"{cls.db_container_name}\" does not already exist.{reset_text}")
+            cls.launch_new_container(cls.db_container_name, db_name, db_http_port, db_bolt_port,
+                                     db_user, db_password, db_version, db_path, db_plugins_path, db_config_path,
+                                     db_heap_initial_size, db_heap_max_size, db_output_flag)
+
+        cls.wait_for_neo4j(db_bolt_port, db_user, db_password, db_output_flag=db_output_flag)
+        # we create an experiment folder and the first test case folder i.e experimentdatetime/testcasedatetime and return the path 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+{ "vehicles": [[960, 7397], [8875, 15585], [8966, 7397], [13368, 7397], [8966, 13484], [8966, 960], [9229, 13368], [5084, 8373], [15585, 960], [960, 9830]]
+}

@@ -1,0 +1,52 @@
+{
+	"Evaluation":{
+		"DataParameters":{
+			"ExpRepetition": [
+				30
+			],
+			"NumberOfDifferentExp": [
+				1
+			],
+			"NumberOfVeh":[
+				5
+			],
+			"DistributionOfVeh":[
+				"random_veh"
+			],
+			"RoadNetwork":[
+				"saarland_simple"
+			]
+		},
+		"TestParameter":{
+			"SlicingMethod":[
+				"NoSlicing"
+			],
+			"Savings":[
+				0.1
+			],
+			"Logging":[
+				0
+			],
+			"Activated":[
+				1
+			],
+			"nuStrich":[
+				0.5
+			],
+			"angle":[
+				0
+			],
+			"convexhullparameter":[
+				"convexHull"
+			]
+		},
+		"TestMethods":{
+			"Grouping_Method":{
+				"greedy": [5]
+			},
+			"Routing_Method":{
+				"ILP":[0]
+			}
+		}
+	}
+}

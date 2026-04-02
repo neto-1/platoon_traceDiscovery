@@ -1,0 +1,10 @@
+\ Model Master_problem_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Minimize
+ 
+Subject To
+ R2: y_(10,_21)_117 + y_(10,_21)_18 + y_(10,_21)_0 >= 18
+Bounds
+Binaries
+ y_(10,_21)_117 y_(10,_21)_18 y_(10,_21)_0
+End

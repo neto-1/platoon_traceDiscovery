@@ -1,0 +1,534 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20191.19.0213.2333                               -->
+<workbook original-version='18.1' source-build='2019.1.0 (20191.19.0213.2333)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Neo4j' inline='true' name='federated.1q3qgrc152hygx0zu611n172dq69' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Neo4j' name='webdata-direct.1svvrvc0eozg8l1b7n2tk1b23i3t'>
+            <connection ACCESSTOKEN='' APIVersion='' CLIENTID='' CLIENTSECRET='' REDIRECT_URI='' REFRESHTOKEN='' SCOPE='' access-token-expires-in='' access-token-issue-time='' authType='basic' authentication='yes' channel='https' class='webdata-direct' connectionData='{&quot;config&quot;:{&quot;url&quot;:&quot;bolt://localhost&quot;,&quot;inspectRows&quot;:&quot;1000&quot;,&quot;tableNames&quot;:[&quot;Road&quot;,&quot;Table2&quot;,&quot;Table3&quot;,&quot;Table4&quot;,&quot;Table5&quot;],&quot;cypherQueries&quot;:[&quot;MATCH (n:primary)-[r:ROAD_SEGMENT]-&gt;(m:primary)\nWITH [n, m] AS roads, r\nUNWIND roads AS road\nRETURN road.lat AS Latitude, road.lon AS Longitude, id(r) AS Line_Group, ID(road) AS OrderOfPoints, &apos;primary&apos; AS type, &apos;segment&apos; AS category\nUNION\nMATCH (n:primary_link)-[r:ROAD_SEGMENT]-&gt;(m:primary_link)\nWITH [n, m] AS roads, r\nUNWIND roads AS road\nRETURN road.lat AS Latitude, road.lon AS Longitude, id(r) AS Line_Group, ID(road) AS OrderOfPoints, &apos;primary_link&apos; AS type, &apos;segment&apos; AS category\nUNION\nMATCH (n:motorway)-[r:ROAD_SEGMENT]-&gt;(m: motorway)\nWITH [n, m] AS roads, r\nUNWIND roads AS road\nRETURN road.lat AS Latitude, road.lon AS Longitude, id(r) AS Line_Group, ID(road) AS OrderOfPoints, &apos;motorway&apos; AS type, &apos;segment&apos; AS category\nUNION\nMATCH (n:motorway_link)-[r:ROAD_SEGMENT]-&gt;(m:motorway_link)\nWITH [n, m] AS roads, r\nUNWIND roads AS road\nRETURN road.lat AS Latitude, road.lon AS Longitude, id(r) AS Line_Group, ID(road) AS OrderOfPoints, &apos;motorway_link&apos; AS type, &apos;segment&apos; AS category\nUNION\nMATCH (n:trunk)-[r:ROAD_SEGMENT]-&gt;(m: trunk)\nWITH [n, m] AS roads, r\nUNWIND roads AS road\nRETURN road.lat AS Latitude, road.lon AS Longitude, id(r) AS Line_Group, ID(road) AS OrderOfPoints, &apos;trunk&apos; AS type, &apos;segment&apos; AS category\nUNION\nMATCH (n:trunk_link)-[r:ROAD_SEGMENT]-&gt;(m:trunk_link)\nWITH [n, m] AS roads, r\nUNWIND roads AS road\nRETURN road.lat AS Latitude, road.lon AS Longitude, id(r) AS Line_Group, ID(road) AS OrderOfPoints, &apos;trunk_link&apos; AS type, &apos;segment&apos; AS category\nUNION\nMATCH (d:Depot)-[r:LOCATED_AT]-&gt;(road:RoadPoint)\nRETURN road.lat AS Latitude, road.lon AS Longitude, ID(r) AS Line_Group, ID(d) AS OrderOfPoints, &apos;Depot&apos; AS type, &apos;depot&apos; AS category\nUNION\nMATCH (road:RoadPoint)\nRETURN road.lat AS Latitude, road.lon AS Longitude, ID(road) AS Line_Group, ID(road) AS OrderOfPoints, &apos;RoadPoint&apos; AS type, &apos;point&apos; AS category&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;]}}' connectionName='Neo4j' filename='Neo4jWdc2.html' id-token='' increment-key='' oauth-client='' path='/neo4j-tableau/website/' port='443' scriptVersion='' secondary_whitelist='' server='neo4j-contrib.github.io' urlQuery='' username='neo4j' usernameAlias='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='webdata-direct.1svvrvc0eozg8l1b7n2tk1b23i3t' name='Road' table='[Road]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Latitude</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Latitude]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>Latitude</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;float&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Longitude</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Longitude]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>Longitude</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;float&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Line_Group</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[Line_Group]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>Line Group</remote-alias>
+            <ordinal>2</ordinal>
+            <caption>Line Group</caption>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OrderOfPoints</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[OrderOfPoints]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>OrderOfPoints</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;int&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>type</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[type]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>Type</remote-alias>
+            <ordinal>4</ordinal>
+            <caption>Type</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;string&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>-1</remote-type>
+            <local-name>[category]</local-name>
+            <parent-name>[Road]</parent-name>
+            <remote-alias>Category</remote-alias>
+            <ordinal>5</ordinal>
+            <caption>Category</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='RemoteTypeName'>&quot;string&quot;</attribute>
+              <attribute datatype='boolean' name='filterable_column'>false</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Kennzahlnamen' datatype='string' name='[:Measure Names]' role='dimension' type='nominal' />
+      <column aggregation='Avg' datatype='integer' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column caption='Line Group' datatype='integer' name='[Line_Group]' role='measure' type='quantitative' />
+      <column aggregation='Avg' datatype='integer' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Kennzahlwerte' datatype='real' name='[Multiple Values]' role='measure' type='quantitative' />
+      <column caption='Anzahl der Datensätze' datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Order Of Points' datatype='integer' name='[OrderOfPoints]' role='measure' type='quantitative' />
+      <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+      <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+      <column-instance column='[type]' derivation='None' name='[none:type:nk]' pivot='key' type='nominal' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='de_DE' class='hyper' dbname='/Users/dmitry/Documents/Eigenes Tableau-Repository/Datenquellen/Extrakt_0k198jr1ebsit319thtu20bpkzw9.hyper' default-settings='yes' schema='Extract' sslmode='' update-time='04/08/2019 02:51:28 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='Neo4j' increment-value='%null%' refresh-type='create' rows-inserted='28683' timestamp-start='2019-04-08 14:51:28.176' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Latitude</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Latitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Latitude</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Road</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Longitude</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Longitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Longitude</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Road</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Line_Group</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Line_Group]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Line_Group</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Road</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>360</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OrderOfPoints</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OrderOfPoints]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>OrderOfPoints</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Road</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>type</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Road</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LROOT' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[category]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>category</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Road</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LROOT' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.473552' measure-ordering='alphabetic' measure-percentage='0.526448' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:type:nk]' type='palette'>
+            <map to='#000000'>
+              <bucket>&quot;motorway&quot;</bucket>
+            </map>
+            <map to='#129bff'>
+              <bucket>&quot;RoadPoint&quot;</bucket>
+            </map>
+            <map to='#3c3c3c'>
+              <bucket>&quot;primary&quot;</bucket>
+            </map>
+            <map to='#5b5b5b'>
+              <bucket>&quot;motorway_link&quot;</bucket>
+            </map>
+            <map to='#797979'>
+              <bucket>&quot;trunk&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;primary_link&quot;</bucket>
+            </map>
+            <map to='#a6a6a6'>
+              <bucket>&quot;trunk_link&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Depot&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Deutschland&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <action caption='Hervorhebung 1 (generiert)' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Blatt 1' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Category' />
+        <param name='target' value='Blatt 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Blatt 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Neo4j' name='federated.1q3qgrc152hygx0zu611n172dq69' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1q3qgrc152hygx0zu611n172dq69'>
+            <column aggregation='Avg' datatype='integer' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column caption='Line Group' datatype='integer' name='[Line_Group]' role='measure' type='quantitative' />
+            <column aggregation='Avg' datatype='integer' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column caption='Order Of Points' datatype='integer' name='[OrderOfPoints]' role='measure' type='quantitative' />
+            <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+            <column-instance column='[Latitude]' derivation='None' name='[none:Latitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Line_Group]' derivation='None' name='[none:Line_Group:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Longitude]' derivation='None' name='[none:Longitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[OrderOfPoints]' derivation='None' name='[none:OrderOfPoints:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[category]' derivation='None' name='[none:category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[type]' derivation='None' name='[none:type:nk]' pivot='key' type='nominal' />
+            <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:category:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;depot&quot;</bucket>
+              <bucket>&quot;point&quot;</bucket>
+              <bucket>&quot;segment&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <manual-sort column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:type:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Depot&quot;</bucket>
+              <bucket>&quot;motorway&quot;</bucket>
+              <bucket>&quot;primary&quot;</bucket>
+              <bucket>&quot;motorway_link&quot;</bucket>
+              <bucket>&quot;trunk&quot;</bucket>
+              <bucket>&quot;trunk_link&quot;</bucket>
+              <bucket>&quot;RoadPoint&quot;</bucket>
+              <bucket>&quot;primary_link&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1q3qgrc152hygx0zu611n172dq69].[none:Longitude:qk]' field-type='quantitative' max='5409829' min='-382505' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1q3qgrc152hygx0zu611n172dq69].[none:Latitude:qk]' field-type='quantitative' max='10748402' min='7345861' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size' field='[federated.1q3qgrc152hygx0zu611n172dq69].[none:type:nk]' field-type='nominal' max-size='1' min-size='0.346841' reverse='true' type='catsize' />
+            <encoding attr='size' field='[federated.1q3qgrc152hygx0zu611n172dq69].[none:category:nk]' field-type='nominal' max-size='1' min-size='0.141847' reverse='true' type='catsize' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='false' />
+            <format attr='enabled' id='um_lcover' value='false' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='false' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='false' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='tableau-light-gray' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:type:nk]' />
+              <size column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:category:nk]' />
+              <lod column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:Line_Group:ok]' />
+              <path column='[federated.1q3qgrc152hygx0zu611n172dq69].[none:OrderOfPoints:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.81303572654724121' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1q3qgrc152hygx0zu611n172dq69].[none:Latitude:qk]</rows>
+        <cols>[federated.1q3qgrc152hygx0zu611n172dq69].[none:Longitude:qk]</cols>
+      </table>
+      <simple-id uuid='{499E8529-4DFD-4EC0-A85F-5CA16EBD1078}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Blatt 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='170'>
+            <card pane-specification-id='0' param='[federated.1q3qgrc152hygx0zu611n172dq69].[none:type:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1q3qgrc152hygx0zu611n172dq69].[none:category:nk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight field='[federated.1q3qgrc152hygx0zu611n172dq69].[none:type:nk]'>
+          <bucket-selection />
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+        <map-scale-visibility value='0' />
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{DCD2B0E1-2F63-4A32-89DD-260C1F380FCC}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Blatt 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

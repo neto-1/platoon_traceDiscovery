@@ -1,0 +1,35 @@
+{
+  "Evalution": {
+    "Anzahl der Experimente": [1, 30],
+    "Anzahl der Fahrzeuge": [2, 10, 30, 50, 100, 200, 500, 1000],
+    "Verteilung der Fahrzeuge":{
+  "Random": [],
+  "Normal": {"LongestPath":[100], "scalevalue":[0.8]},
+  "Log-Normal": {"LongestPath":[100], "scalevalue":[0.8]},
+  "Gamma": {"LongestPath":[100], "scalevalue":[0.8]},
+  "Region-Random": {"a":[49.53],"b":[49.38],"c":[49.35],"d":[49.24]}
+    },
+    "Road Network": [3000, 10000, 40000, 70000],
+    "Slicing Method": ["No Slicing", "Random Slicing", "Stochastic Slicing"],
+    "VehicleCompare":{
+      "η`": [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.00],
+      "α": ["cos(65)", "cos(70)", "cos(75)", "cos(80)", "cos(85)", "cos(90)"],
+      "convexhullparameter": ["..."]
+    },
+    "Grouping Method": {
+      "Greedy": {"Anzahl der Gruppen":[10, 20, 30, 50, 100] },
+      "WTP": {"Anzahl der Gruppen":[10, 20, 30, 50, 100] },
+      "SP": {"Anzahl der Gruppen":[10, 20, 30, 50, 100] , "AnzahlCommunities":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+    },
+    "Routing":{
+      "ILP": {
+        "η": [0.1, 0.2, 0.15, 0.05, 0.09, 0.11, 0.08, 0.12]
+      },
+      "CG":{
+        "η": [0.1, 0.2, 0.15, 0.05, 0.09, 0.11, 0.08, 0.12]
+      }
+    },
+    "Logging": ["true", "false"]
+  }
+}
+

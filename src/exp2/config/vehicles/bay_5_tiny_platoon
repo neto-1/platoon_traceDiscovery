@@ -1,0 +1,35 @@
+{
+    "vehicles": [
+        [
+            102586,
+            160095
+            
+        ],
+        [
+            160058,
+            90090
+        ],
+        [
+            75822,
+            75740
+        ],
+        [
+            105501,
+            159972
+        ],
+        [
+            172380,
+            126610
+        ]
+    ],
+    "description": [
+        "Hochstädt an der Donau",
+        "Hochstädt an der Donau",
+        "Hochstädt an der Donau",
+        "Günzburg to A8",
+        "Ulm to Nersingen A7"
+    ],
+    "plaoon": [
+        "expected for the first two only"
+    ]
+}

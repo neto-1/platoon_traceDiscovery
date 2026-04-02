@@ -1,0 +1,70 @@
+{
+  "data_parameters": {
+    "number_of_different_exp": 2,
+    "vehicle_sets_info": {
+      "distributions": {
+        "number_of_vehicles": [
+          34,
+          44
+        ],
+        "methods": [
+          "random"
+        ],
+        "requirements": [
+          ""
+        ]
+      }
+    }
+  },
+  "test_parameters": {
+    "number_of_same_exp": 1,
+    "savings": [
+      0.1
+    ],
+    "logging": 0
+  },
+  "test_methods": {
+    "incentive_methods": {
+      "incentive_method_combinations": [
+        {
+          "angle_direction": [
+            0.2,
+            0
+          ],
+          "geo_median": [
+            0.4,
+            0.5,
+            25
+          ],
+          "geo_container": [
+            0.4,
+            "shortest_path_container"
+          ]
+        }
+      ]
+    },
+    "grouping_methods": {
+      "single_group": [
+        [
+          0.001,
+          0
+        ]
+      ]
+    },
+    "partitioning_methods": {
+      "no_partitioning": [
+        -1
+      ]
+    },
+    "routing_methods": {
+      "ilp": [
+        1e100
+      ]
+    },
+    "disjointness": {
+      "methods": [
+        "SelectionILP"
+      ]
+    }
+  }
+}

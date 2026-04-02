@@ -1,0 +1,22 @@
+{
+    "bar": {
+        "type": "bar",
+        "experiment": "foo1",
+        "title": {
+            "label": "Some Foo Experiment",
+            "loc": "right"
+        },
+        "labels": {
+            "x-axis": "X-Axis Label",
+            "y-axis": "Y-Axis Label"
+        },
+        "legend": {
+            "loc": "upper center",
+            "shadow": true,
+            "fontsize": "large"
+        },
+        "styles": {
+            "grid": true
+        }
+    }
+}

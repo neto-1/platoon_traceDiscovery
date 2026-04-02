@@ -1,0 +1,9 @@
+diff a/src/exp/experiment.py b/src/exp/experiment.py	(rejected hunks)
+@@ -175,7 +175,6 @@
+ numberOfVeh = 10                         # the number of vehicles in the considered set
+ numberOfGroups = 2                     # the number of groups to create (e.g. 20 then greey will create aroung 20 groups)
+ 
+-ConvexHull = 0
+ # these are number of vehicles(20), the database (saarland_simple) and the number of groups to create (10)
+ flow = {  numberOfVeh :    {database:numberOfGroups}
+           }

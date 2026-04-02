@@ -1,0 +1,24 @@
+{
+    "vehicles": [
+        [
+            76013,
+            118403
+        ],
+        [
+            41751,
+            401
+        ],
+        [
+            6586,
+            55812
+        ]
+    ],
+    "description": [
+        "Würzburg - Süwest München",
+        "Erlangen - Südost München",
+        "West of Ingolstadt - Unterschleissheim"
+    ],
+    "plaoon": [
+        "expected"
+    ]
+}
