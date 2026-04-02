@@ -1,3 +1,8 @@
 .venv
 .idea
-database.spatial/
+__pycache__/
+*.pyc
+stats_data/
+data/database.spatial/
+*.log
+*.zip
